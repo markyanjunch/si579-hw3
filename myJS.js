@@ -37,8 +37,9 @@ color_block.addEventListener('click', changeColor);
 * on mouse click. For best practice use addEventListener.
 *
 */
-
-
+const button = document.querySelector('#convertbtn');
+const inputF = document.querySelector('#f-input');
+const outputC = document.querySelector('#c-output');
 /*
 * Then write a function that calculates Fahrenheit to Celsius and display it on the webpage
 *
@@ -46,9 +47,13 @@ color_block.addEventListener('click', changeColor);
 
 function convertTemp(){
     //Calculate the temperature here
-
+    const degreeF = inputF.value;
+    let degreeC = NaN;
+    if(degreeF != '') {
+        degreeC = (degreeF-32)*(5/9);
+    }
     //Send the calculated temperature to HTML
-
+    outputC.textContent = degreeC;
 }
 
-
+button.addEventListener('click', convertTemp);
