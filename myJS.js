@@ -48,10 +48,7 @@ const outputC = document.querySelector('#c-output');
 function convertTemp(){
     //Calculate the temperature here
     const degreeF = inputF.value;
-    let degreeC = NaN;
-    if(degreeF != '') {
-        degreeC = (degreeF-32)*(5/9);
-    }
+    const degreeC = (degreeF-32)*(5/9);
     //Send the calculated temperature to HTML
     outputC.textContent = degreeC;
 }
